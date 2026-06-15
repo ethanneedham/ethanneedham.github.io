@@ -3,6 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:title" content="Ethan Needham" />
+    <meta property="og:description" content="Artist • Producer • Songwriter" />
+    <meta property="og:image" content="https://ethanneedham.com/assets/images/artist/ethan-needham-hero.jpg" />
+    <meta property="og:url" content="https://ethanneedham.com" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ethan Needham" />
+    <meta name="twitter:description" content="Artist • Producer • Songwriter" />
+    <meta name="twitter:image" content="https://ethanneedham.com/assets/images/artist/ethan-needham-hero.jpg" />
+
     <title>Ethan Needham</title>
 
     <style>
@@ -13,94 +25,100 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: #0a0a0a;
-            color: #ffffff;
-            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .hero {
+            height: 100vh;
+            background-image: url('assets/images/artist/ethan-needham-hero.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 2rem;
+
+            position: relative;
         }
 
-        .container {
-            max-width: 700px;
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
         }
 
-        h1 {
-            font-size: clamp(2.5rem, 8vw, 5rem);
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            margin-bottom: 1rem;
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            padding: 20px;
         }
 
-        .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.8;
-            margin-bottom: 2rem;
-            letter-spacing: 0.05em;
+        .hero-content h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
         }
 
-        .coming-soon {
-            font-size: 1rem;
-            opacity: 0.65;
-            margin-bottom: 2.5rem;
+        .hero-content p {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            margin-bottom: 30px;
+            opacity: 0.9;
         }
 
-        .links {
+        .hero-buttons {
             display: flex;
             justify-content: center;
+            gap: 15px;
             flex-wrap: wrap;
-            gap: 1rem;
         }
 
-        .links a {
-            color: white;
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
             text-decoration: none;
-            border: 1px solid rgba(255,255,255,0.25);
-            padding: 0.75rem 1.25rem;
-            border-radius: 999px;
-            transition: all 0.2s ease;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: 0.3s ease;
         }
 
-        .links a:hover {
-            border-color: white;
+        .btn-primary {
+            background: white;
+            color: black;
+        }
+
+        .btn-primary:hover {
             transform: translateY(-2px);
         }
 
-        footer {
-            margin-top: 3rem;
-            font-size: 0.9rem;
-            opacity: 0.5;
+        .btn-secondary {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: black;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>ETHAN NEEDHAM</h1>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>ETHAN NEEDHAM</h1>
 
-        <p class="subtitle">
-            Artist • Producer • Songwriter
-        </p>
+            <p>Artist • Producer • Songwriter</p>
 
-        <p class="coming-soon">
-            New website currently under construction.<br>
-            Full portfolio, music, press kit, and contact information coming soon.
-        </p>
-
-        <div class="links">
-            <a href="https://instagram.com/ethanneedham" target="_blank">Instagram</a>
-            <a href="https://youtube.com/@ethan.needham" target="_blank">YouTube</a>
-            <a href="https://tiktok.com/@ethan.needham" target="_blank">TikTok</a>
-            <a href="mailto:hello@ethanneedham.com">Contact</a>
+            <div class="hero-buttons">
+                <a href="music.html" class="btn btn-primary">Listen</a>
+                <a href="press-kit.html" class="btn btn-secondary">Press Kit</a>
+            </div>
         </div>
-
-        <footer>
-            © 2026 Ethan Needham
-        </footer>
-    </div>
+    </section>
 
 </body>
 </html>
