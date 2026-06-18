@@ -1,6 +1,5 @@
-
 /* =========================
-NAVBAR (GLASS + SCROLL HIDE)
+NAVBAR (GLASS + SCROLL HIDE + LOGO)
 ========================= */
 
 .navbar {
@@ -10,10 +9,10 @@ NAVBAR (GLASS + SCROLL HIDE)
   z-index: 9999;
 
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
-  padding: 25px 0;
+  padding: 25px 40px;
 
   background: rgba(0, 0, 0, 0.02);
 
@@ -34,12 +33,41 @@ NAVBAR (GLASS + SCROLL HIDE)
   opacity: 0;
 }
 
-/* NAV LINKS */
+/* =========================
+LOGO (HOME BUTTON)
+========================= */
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo img {
+  height: 44px;
+  width: auto;
+  max-width: 140px;
+
+  object-fit: contain;
+  display: block;
+
+  opacity: 0.9;
+  transition: opacity 0.25s ease;
+}
+
+.nav-logo img:hover {
+  opacity: 1;
+}
+
+/* =========================
+NAV LINKS
+========================= */
 
 .nav-links {
   display: flex;
   gap: 60px;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {

@@ -1,0 +1,120 @@
+ /* =========================
+ MUSIC PAGE
+ ========================= */
+
+.music {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  padding: 140px 20px 80px;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+/* =========================
+ SAFETY RESET (IMPORTANT)
+ ========================= */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  color: white;
+}
+
+/* =========================
+ BACKGROUND LAYER
+ ========================= */
+
+.music::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  /* safer path (adjust if needed) */
+  background-image: url("/assets/images/artist/ethan-needham-bass.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  opacity: 0.28;
+
+  filter: blur(18px) contrast(1.05);
+  transform: scale(1.12);
+}
+
+/* =========================
+ REMOVE THIS (IMPORTANT)
+ ========================= */
+
+/* DELETE THIS ENTIRE BLOCK IF YOU HAVE IT IN HTML JS SYSTEM */
+/*
+.audio-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+}
+*/
+
+/* =========================
+ CONTENT
+ ========================= */
+
+.music-inner {
+  position: relative;
+  z-index: 2;
+
+  max-width: 700px;
+  width: 100%;
+}
+
+.music h1 {
+  font-size: 3rem;
+  font-family: 'Neue Montreal', sans-serif;
+  font-weight: 500;
+
+  margin-bottom: 10px;
+}
+
+.music-sub {
+  opacity: 0.6;
+  margin-bottom: 60px;
+  font-family: 'Neue Montreal', sans-serif;
+}
+
+/* =========================
+ SECTIONS
+ ========================= */
+
+.music-section {
+  margin-bottom: 50px;
+}
+
+.music-section h2 {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  opacity: 0.5;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.music-empty {
+  opacity: 0.6;
+  font-style: italic;
+}
+
+/* =========================
+ NAVBAR SAFETY
+ ========================= */
+
+.navbar {
+  z-index: 9999;
+}
