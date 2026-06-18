@@ -1,0 +1,108 @@
+
+/* =========================
+HERO SYSTEM
+========================= */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* BASE IMAGE LAYERS */
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition: opacity 2.2s cubic-bezier(0.25, 0.8, 0.25, 1),
+              transform 2.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* BLACK & WHITE */
+
+.hero-bw {
+  background-image: url('../../assets/images/artist/ethan-needham-hero-black-and-white.png');
+  opacity: 1;
+}
+
+/* COLOR */
+
+.hero-color {
+  background-image: url('../../assets/images/artist/ethan-needham-hero-color.png');
+  opacity: 0;
+}
+
+/* TOGGLE STATE */
+
+.hero.color-mode .hero-bw {
+  opacity: 0;
+}
+
+.hero.color-mode .hero-color {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+/* HERO CONTENT */
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  color: white;
+  padding: 20px;
+
+  font-family: 'Neue Montreal', sans-serif;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.8rem, 8vw, 5rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  margin-bottom: 35px;
+  opacity: 0.8;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .nav-links {
+    gap: 25px;
+  }
+
+  .nav-links a {
+    font-size: 0.65rem;
+  }
+
+  .footer-links,
+  .footer-professional {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+  }
+
+  .hero-content p {
+    font-size: 0.8rem;
+  }
+}

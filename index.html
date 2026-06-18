@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO / SOCIAL -->
     <meta property="og:title" content="Ethan Needham" />
     <meta property="og:description" content="Artist • Producer • Songwriter" />
     <meta property="og:image" content="https://ethanneedham.com/assets/images/artist/ethan-needham-hero.jpg" />
@@ -17,108 +20,69 @@
 
     <title>Ethan Needham</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <!-- CSS SYSTEM (NEW ARCHITECTURE) -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages/home.css" />
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .hero {
-            height: 100vh;
-            background-image: url('assets/images/artist/ethan-needham-hero.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-
-            position: relative;
-        }
-
-        .hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.45);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            color: white;
-            padding: 20px;
-        }
-
-        .hero-content h1 {
-            font-size: clamp(3rem, 8vw, 6rem);
-            margin-bottom: 15px;
-            letter-spacing: 2px;
-        }
-
-        .hero-content p {
-            font-size: clamp(1rem, 2vw, 1.5rem);
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 28px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            transition: 0.3s ease;
-        }
-
-        .btn-primary {
-            background: white;
-            color: black;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            border: 2px solid white;
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            background: white;
-            color: black;
-        }
-    </style>
 </head>
+
 <body>
 
+    <!-- =========================
+    NAVBAR
+    ========================== -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="music.html">MUSIC</a></li>
+            <li><a href="shows.html">SHOWS</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <!-- =========================
+    HERO
+    ========================== -->
     <section class="hero">
+
+        <div class="hero-bg hero-bw"></div>
+        <div class="hero-bg hero-color"></div>
+
         <div class="hero-content">
             <h1>ETHAN NEEDHAM</h1>
-
-            <p>Artist • Producer • Songwriter</p>
-
-            <div class="hero-buttons">
-                <a href="music.html" class="btn btn-primary">Listen</a>
-                <a href="press-kit.html" class="btn btn-secondary">Press Kit</a>
-            </div>
         </div>
+
     </section>
 
+    <!-- =========================
+    FOOTER
+    ========================== -->
+    <footer class="footer">
+
+        <div class="footer-links">
+            <a href="https://instagram.com/ethanneedham" target="_blank">INSTAGRAM</a>
+            <a href="https://tiktok.com/@ethan.needham" target="_blank">TIKTOK</a>
+            <a href="https://youtube.com/@ethan.needham" target="_blank">YOUTUBE</a>
+            <a href="#">SPOTIFY</a>
+        </div>
+
+        <div class="footer-professional">
+            <a href="press-kit.html">PRESS KIT</a>
+            <a href="contact.html">CONTACT</a>
+        </div>
+
+        <div class="footer-copyright">
+            © ETHAN NEEDHAM
+        </div>
+
+    </footer>
+
+    <!-- =========================
+    JS (MODULAR SYSTEM)
+    ========================== -->
+    <script src="js/main.js"></script>
+    <script src="js/hero-toggle.js"></script>
+
 </body>
+
 </html>
