@@ -1,71 +1,129 @@
-
 /* =========================
 CONTACT PAGE
 ========================= */
 
 .contact {
-  min-height: 100vh;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+    position: relative;
 
-  padding: 140px 20px 80px;
+    min-height: 100svh;
 
-  position: relative;
-  isolation: isolate; /* keeps background contained */
-  overflow: hidden;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 140px 20px 100px;
 }
 
 /* =========================
-BACKGROUND ECHO LAYER
+BACKGROUND
 ========================= */
 
-.contact::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
+.contact-bg {
 
-  background-image: url("/assets/images/artist/ethan-needham-hero-black-and-white.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    position: absolute;
+    inset: -40px;
 
-  opacity: 0.3; /* you can tune this */
-  filter: blur(20px) contrast(1.1);
-  transform: scale(1.1);
+    background-image:
+        url('../../assets/images/artist/ethan-needham-hero-black-and-white.png');
+
+    background-size: cover;
+    background-position: center;
+
+    opacity: 0.35;
+
+    filter: blur(14px);
+
+    transform: scale(1.08);
+
+    z-index: 0;
+}
+
+.contact::after {
+
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.70),
+            rgba(0,0,0,0.85)
+        );
+
+    z-index: 1;
 }
 
 /* =========================
-CONTENT LAYER
+CONTENT
 ========================= */
 
 .contact-inner {
-  position: relative;
-  z-index: 1;
-  max-width: 600px;
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    max-width: 700px;
+
+    padding: 20px;
+}
+
+.contact-inner h1 {
+
+    font-family: var(--font-display);
+
+    font-size: clamp(3rem, 8vw, 6rem);
+
+    font-weight: 500;
+
+    line-height: 0.9;
+
+    letter-spacing: 0.04em;
+
+    text-transform: uppercase;
 }
 
 /* =========================
-TYPOGRAPHY
+SIGNAL TEXT
 ========================= */
 
-.contact h1 {
-  font-family: 'Neue Montreal', sans-serif;
-  font-size: 3rem;
-  font-weight: 500;
+.contact-intro {
 
-  margin-bottom: 20px;
-  letter-spacing: 0.02em;
+    margin-top: 24px;
+
+    font-family: var(--font-mono);
+
+    font-size: 0.8rem;
+
+    font-weight: 400;
+
+    letter-spacing: 0.35em;
+
+    text-transform: uppercase;
+
+    opacity: 0.55;
 }
 
-.contact-sub {
-  opacity: 0.7;
-  margin-bottom: 50px;
+.contact-intro::before {
 
-  font-family: 'Neue Montreal', sans-serif;
+    content: '';
+
+    display: block;
+
+    width: 40px;
+    height: 1px;
+
+    margin: 0 auto 14px;
+
+    background: rgba(255,255,255,0.35);
 }
 
 /* =========================
@@ -73,43 +131,75 @@ CONTACT GRID
 ========================= */
 
 .contact-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+
+    margin-top: 70px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 40px;
 }
 
 .contact-item {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
 }
 
-.contact-item .label {
-  font-family: 'Martian Mono', monospace;
-  font-size: 0.7rem;
-  opacity: 0.5;
-  letter-spacing: 0.15em;
+.label {
+
+    font-family: var(--font-mono);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+
+    opacity: 0.5;
 }
 
 .contact-item a {
-  color: white;
-  text-decoration: none;
 
-  font-family: 'Neue Montreal', sans-serif;
-  font-size: 1rem;
+    font-family: var(--font-display);
 
-  opacity: 0.85;
-  transition: opacity 0.3s ease;
+    font-size: clamp(1rem, 2vw, 1.15rem);
+
+    color: white;
+
+    text-decoration: none;
+
+    opacity: 0.85;
+
+    transition: opacity var(--transition-fast);
 }
 
 .contact-item a:hover {
-  opacity: 1;
+
+    opacity: 1;
 }
 
 /* =========================
-NAVBAR SAFETY
+MOBILE
 ========================= */
 
-.navbar {
-  z-index: 9999;
+@media (max-width: 768px) {
+
+    .contact {
+
+        padding: 120px 20px 80px;
+    }
+
+    .contact-inner h1 {
+
+        font-size: clamp(2.5rem, 12vw, 4.5rem);
+    }
+
+    .contact-grid {
+
+        margin-top: 50px;
+    }
+
 }

@@ -1,0 +1,156 @@
+body {
+    margin: 0;
+    background: #0b0b0b;
+    color: white;
+    font-family: sans-serif;
+}
+
+/* BACKGROUND */
+.press-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+
+    background-image: url("../../assets/images/artist/ethan-needham-hero-black-and-white.png");
+    background-size: cover;
+    background-position: center;
+
+    opacity: 0.18;
+    filter: blur(20px);
+    transform: scale(1.15);
+}
+
+/* MAIN WRAPPER */
+.press-container {
+    max-width: 950px;
+    margin: 0 auto;
+
+    padding: 140px 22px 110px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+/* HEADER */
+.press-header h1 {
+    margin: 0;
+    font-size: 3rem;
+    letter-spacing: 0.05em;
+    line-height: 1;
+}
+
+.press-header p {
+    margin-top: 6px;
+    opacity: 0.6;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+}
+
+/* =========================
+HERO (BIO + VIDEO)
+========================= */
+
+.press-hero {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+
+    /* critical: prevents vertical misalignment */
+    align-items: start;
+}
+
+/* BIO */
+.press-bio {
+    font-size: 1.25rem;
+    line-height: 1.75;
+    opacity: 0.92;
+}
+
+/* VIDEO (THIS IS THE ONLY MOVEMENT CONTROL) */
+.press-video {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+
+    border-radius: 14px;
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.55);
+
+    /* THIS is the actual "move it up" fix */
+    transform: translateY(-140px);
+
+    /* ensures it aligns to top of grid row */
+    align-self: start;
+}
+
+.press-video iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* =========================
+GALLERY
+========================= */
+
+.press-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.gallery-title {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    opacity: 0.5;
+    text-transform: uppercase;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.25s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.02);
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .press-hero {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .press-video {
+        transform: translateY(0);
+    }
+
+    .press-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .press-bio {
+        font-size: 1.1rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}

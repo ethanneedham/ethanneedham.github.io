@@ -1,120 +1,169 @@
- /* =========================
- MUSIC PAGE
- ========================= */
+/* =========================
+MUSIC PAGE
+========================= */
 
 .music {
-  min-height: 100vh;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+    position: relative;
 
-  padding: 140px 20px 80px;
+    min-height: 100svh;
 
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 140px 20px 100px;
 }
 
 /* =========================
- SAFETY RESET (IMPORTANT)
- ========================= */
+BACKGROUND
+========================= */
 
-html, body {
-  margin: 0;
-  padding: 0;
-  background: black;
-  color: white;
+.music-bg {
+
+    position: absolute;
+    inset: -40px;
+
+    background-image:
+        url('../../assets/images/artist/ethan-needham-bass.png');
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    opacity: 0.75;
+
+    filter: blur(10px);
+
+    transform: scale(1.08);
+
+    z-index: 0;
+}
+
+.music::after {
+
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.60),
+            rgba(0, 0, 0, 0.78)
+        );
+
+    z-index: 1;
 }
 
 /* =========================
- BACKGROUND LAYER
- ========================= */
-
-.music::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-
-  /* safer path (adjust if needed) */
-  background-image: url("/assets/images/artist/ethan-needham-bass.png");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  opacity: 0.28;
-
-  filter: blur(18px) contrast(1.05);
-  transform: scale(1.12);
-}
-
-/* =========================
- REMOVE THIS (IMPORTANT)
- ========================= */
-
-/* DELETE THIS ENTIRE BLOCK IF YOU HAVE IT IN HTML JS SYSTEM */
-/*
-.audio-layer {
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-}
-*/
-
-/* =========================
- CONTENT
- ========================= */
+CONTENT
+========================= */
 
 .music-inner {
-  position: relative;
-  z-index: 2;
 
-  max-width: 700px;
-  width: 100%;
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1000px;
+
+    padding: 20px;
 }
 
-.music h1 {
-  font-size: 3rem;
-  font-family: 'Neue Montreal', sans-serif;
-  font-weight: 500;
+.music-inner h1 {
 
-  margin-bottom: 10px;
-}
+    font-family: var(--font-display);
 
-.music-sub {
-  opacity: 0.6;
-  margin-bottom: 60px;
-  font-family: 'Neue Montreal', sans-serif;
-}
+    font-size: clamp(3rem, 8vw, 6rem);
 
-/* =========================
- SECTIONS
- ========================= */
+    font-weight: 500;
 
-.music-section {
-  margin-bottom: 50px;
-}
+    line-height: 0.9;
 
-.music-section h2 {
-  font-size: 0.8rem;
-  letter-spacing: 0.2em;
-  opacity: 0.5;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
+    letter-spacing: 0.04em;
 
-.music-empty {
-  opacity: 0.6;
-  font-style: italic;
+    text-transform: uppercase;
+
+    color: white;
 }
 
 /* =========================
- NAVBAR SAFETY
- ========================= */
+SIGNAL TEXT
+========================= */
 
-.navbar {
-  z-index: 9999;
+.music-intro {
+
+    margin-top: 24px;
+
+    font-family: var(--font-mono);
+
+    font-size: 0.8rem;
+
+    font-weight: 400;
+
+    letter-spacing: 0.35em;
+
+    text-transform: uppercase;
+
+    opacity: 0.55;
+}
+
+.music-intro::before {
+
+    content: '';
+
+    display: block;
+
+    width: 40px;
+    height: 1px;
+
+    margin: 0 auto 14px;
+
+    background: rgba(255, 255, 255, 0.35);
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .music {
+
+        padding: 120px 20px 80px;
+    }
+
+    .music-inner h1 {
+
+        font-size: clamp(2.5rem, 12vw, 4.5rem);
+    }
+
+    .music-intro {
+
+        font-size: 0.7rem;
+
+        letter-spacing: 0.2em;
+    }
+
+    .music-message {
+
+        margin-top: 40px;
+
+        font-size: 0.95rem;
+    }
+
+    .music-bg {
+
+        filter: blur(8px);
+
+        opacity: 0.8;
+    }
+
 }

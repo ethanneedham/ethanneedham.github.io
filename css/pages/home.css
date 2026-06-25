@@ -1,108 +1,130 @@
-
 /* =========================
-HERO SYSTEM
+HOME HERO
 ========================= */
 
 .hero {
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+    position: relative;
+
+    min-height: 100svh;
+
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
 }
 
-/* BASE IMAGE LAYERS */
+/* =========================
+IMAGE LAYERS
+========================= */
 
 .hero-bg {
-  position: absolute;
-  inset: 0;
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    position: absolute;
+    inset: 0;
 
-  transition: opacity 2.2s cubic-bezier(0.25, 0.8, 0.25, 1),
-              transform 2.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    will-change: opacity;
+
+    transition:
+        opacity 2.2s cubic-bezier(0.25, 0.8, 0.25, 1),
+        transform 2.2s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-
-/* BLACK & WHITE */
 
 .hero-bw {
-  background-image: url('../../assets/images/artist/ethan-needham-hero-black-and-white.png');
-  opacity: 1;
+    background-image: url('../../assets/images/artist/ethan-needham-hero-black-and-white.png');
+    opacity: 1;
 }
-
-/* COLOR */
 
 .hero-color {
-  background-image: url('../../assets/images/artist/ethan-needham-hero-color.png');
-  opacity: 0;
+    background-image: url('../../assets/images/artist/ethan-needham-hero-color.png');
+    opacity: 0;
 }
 
-/* TOGGLE STATE */
+/* =========================
+OVERLAY
+========================= */
+
+.hero::after {
+
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.25),
+        rgba(0,0,0,0.55)
+    );
+
+    z-index: 1;
+}
+
+/* =========================
+COLOR MODE
+========================= */
 
 .hero.color-mode .hero-bw {
-  opacity: 0;
+    opacity: 0;
 }
 
 .hero.color-mode .hero-color {
-  opacity: 1;
-  transform: scale(1.02);
+    opacity: 1;
+    transform: scale(1.02);
 }
 
-/* HERO CONTENT */
+/* =========================
+CONTENT
+========================= */
 
 .hero-content {
-  position: relative;
-  z-index: 2;
 
-  color: white;
-  padding: 20px;
+    position: relative;
+    z-index: 2;
 
-  font-family: 'Neue Montreal', sans-serif;
+    color: white;
+
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
+/* MAIN TITLE */
 
 .hero-content h1 {
-  font-size: clamp(2.8rem, 8vw, 5rem);
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  margin-bottom: 20px;
+
+    font-family: var(--font-display);
+
+    font-size: clamp(4rem, 10vw, 7rem);
+
+    font-weight: 500;
+
+    line-height: 0.9;
+
+    letter-spacing: 0.05em;
+
+    text-transform: uppercase;
 }
 
-.hero-content p {
-  font-size: clamp(0.9rem, 2vw, 1.2rem);
-  font-weight: 300;
-  letter-spacing: 0.04em;
-  margin-bottom: 35px;
-  opacity: 0.8;
-}
+/* removed subtitle intentionally */
 
-/* MOBILE */
+/* =========================
+MOBILE
+========================= */
 
 @media (max-width: 768px) {
 
-  .nav-links {
-    gap: 25px;
-  }
-
-  .nav-links a {
-    font-size: 0.65rem;
-  }
-
-  .footer-links,
-  .footer-professional {
-    flex-direction: column;
-    gap: 18px;
-  }
-
-  .hero-content h1 {
-    font-size: clamp(2rem, 10vw, 3.5rem);
-  }
-
-  .hero-content p {
-    font-size: 0.8rem;
-  }
+    .hero-content h1 {
+        font-size: clamp(2.75rem, 12vw, 4.5rem);
+    }
 }
